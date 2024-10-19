@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Vehicule } from '../interfaces/Vehicule';
+import { Respuesta} from '../interfaces/Vehicule';
 
 
 @Injectable({
@@ -12,7 +12,8 @@ export class VehiculeService {
   constructor(private http: HttpClient) { 
 
   }
-  getVehicules() : Observable<Vehicule[]> {
-    return this.http.get<Vehicule[]>('https://swapi.dev/api/vehicules/');
+  
+  getVehicules() : Observable<Respuesta> {
+    return this.http.get<Respuesta>('https://swapi.dev/api/vehicles');
   }
 }
