@@ -1,25 +1,37 @@
-<div class="vehicle-card">
+<div class="vehicle-card mt-2">
+
   @for(item of listadoVehicules; track item.name){
-  <div class="card">
+  
+    <div class="card">
     <div class="card-header">
-      <h1>{{ item.name }}</h1>
-      <h2>{{ item.model }}</h2>
+      <h4>{{ item.name }}</h4>
+      <h5>{{ item.model }}</h5>
     </div>
   </div>
-  
-  <div class="card-body">
-    <p><strong>Manufacturer:</strong> {{ item.manufacturer }}</p>
-    <p><strong>Vehicle Class:</strong> {{ item.vehicle_class }}</p>
-    <p><strong>Cargo Capacity:</strong> {{ item.cargo_capacity }}</p>
-    <p><strong>Consumables:</strong> {{ item.consumables }}</p>
-    <p><strong>Cost in Credits:</strong> {{ item.cost_in_credits }}</p>
-    <p><strong>Crew:</strong> {{ item.crew }}</p>
-    <p><strong>Length:</strong> {{ item.length }}</p>
-    <p><strong>Max Atmosphering Speed:</strong> {{ item.max_atmosphering_speed }}</p>
-    <p><strong>Passengers:</strong> {{ item.passengers }}</p>
-    <p><strong>Created:</strong> {{ item.created }}</p>
-    <p><strong>Edited:</strong> {{ item.edited }}</p>
-    <img [src]="createImg(item.url)">
+
+  <div class="row g-0">
+
+    <div class="col-md-4">
+      <img [src]="createImg(item.url)">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <p><strong>Manufacturer:</strong> {{ item.manufacturer }}</p>
+        <p><strong>Vehicle Class:</strong> {{ item.vehicle_class }}</p>
+        <p><strong>Cargo Capacity:</strong> {{ item.cargo_capacity }}</p>
+        <p><strong>Consumables:</strong> {{ item.consumables }}</p>
+        <p><strong>Cost in Credits:</strong> {{ item.cost_in_credits }}</p>
+        <p><strong>Crew:</strong> {{ item.crew }}</p>
+        <p><strong>Length:</strong> {{ item.length }}</p>
+        <p><strong>Max Atmosphering Speed:</strong> {{ item.max_atmosphering_speed }}</p>
+        <p><strong>Passengers:</strong> {{ item.passengers }}</p>
+        <p><strong>Created:</strong> {{ item.created }}</p>
+        <p><strong>Edited:</strong> {{ item.edited }}</p>
+      </div>
+    </div>
+
   </div>
+
   }
 </div>

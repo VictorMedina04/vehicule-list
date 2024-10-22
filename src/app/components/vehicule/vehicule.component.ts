@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { listadoVehicules, Respuesta } from '../../interfaces/Vehicule';
+import { listadoVehicules, VehiculeListResponse } from '../../interfaces/Vehicule';
 import { VehiculeService } from '../../service/vehicule.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { VehiculeService } from '../../service/vehicule.service';
 export class VehiculeComponent implements OnInit {
 
   listadoVehicules: listadoVehicules[] = [];
+  
   constructor(private vehiculeService:VehiculeService) {}
 
   ngOnInit(): void {
@@ -19,10 +20,8 @@ export class VehiculeComponent implements OnInit {
   }
 
   createImg(url : string){
-   
     let subcadenas = url.split('/');
     let id = subcadenas[subcadenas.length - 2];
-
     return `https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`;
   }
 

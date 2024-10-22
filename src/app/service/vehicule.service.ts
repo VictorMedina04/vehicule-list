@@ -1,19 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Respuesta} from '../interfaces/Vehicule';
-
+import { VehiculeListResponse } from '../interfaces/Vehicule';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehiculeService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) { }
 
-  }
-  
-  getVehicules() : Observable<Respuesta> {
-    return this.http.get<Respuesta>('https://swapi.dev/api/vehicles');
+  getVehicules(): Observable<VehiculeListResponse> {
+    return this.http.get<VehiculeListResponse>('https://swapi.dev/api/vehicles');
   }
 }
